@@ -2,6 +2,11 @@
 using ErpDocuments.Application.Documents.Interfaces;
 using ErpDocuments.Infrastructure.Services.Documents;
 using Microsoft.EntityFrameworkCore;
+using ErpDocuments.Application.Companies.Interfaces;
+using ErpDocuments.Application.RelatedEntities.Interfaces;
+using ErpDocuments.Infrastructure.Services.Companies;
+using ErpDocuments.Infrastructure.Services.RelatedEntities;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +25,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Servicios de aplicación
 builder.Services.AddScoped<IDocumentService, DocumentService>();
+builder.Services.AddScoped<ICompanyService, CompanyService>();
+builder.Services.AddScoped<IRelatedEntityService, RelatedEntityService>();
 
 var app = builder.Build();
 
