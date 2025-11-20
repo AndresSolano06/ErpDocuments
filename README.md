@@ -300,7 +300,7 @@ La forma más sencilla de probar el sistema es usando **Swagger UI**:
 - El proyecto está preparado para extender la lógica de validación, agregar estados adicionales y nuevas entidades relacionadas.
 - El almacenamiento en S3 está encapsulado en un servicio, por lo que se puede sustituir por otro proveedor de almacenamiento si fuese necesario.
 
-##Usuario para S3
+## Usuario para S3
 - https://205662215140.signin.aws.amazon.com/console
 - User: erpdocuments-reviewer
 - Pass: ErpDocs2025!
