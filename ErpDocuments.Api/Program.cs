@@ -6,6 +6,8 @@ using ErpDocuments.Application.Companies.Interfaces;
 using ErpDocuments.Application.RelatedEntities.Interfaces;
 using ErpDocuments.Infrastructure.Services.Companies;
 using ErpDocuments.Infrastructure.Services.RelatedEntities;
+using ErpDocuments.Application.Validation.Interfaces;
+using ErpDocuments.Infrastructure.Services.Validation;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +29,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IDocumentService, DocumentService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IRelatedEntityService, RelatedEntityService>();
+builder.Services.AddScoped<IValidationFlowService, ValidationFlowService>();
+builder.Services.AddScoped<IValidationStepService, ValidationStepService>();
+builder.Services.AddScoped<IValidationActionService, ValidationActionService>();
 
 var app = builder.Build();
 
