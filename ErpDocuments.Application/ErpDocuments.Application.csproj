@@ -6,8 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Companies\Interfaces\" />
-    <Folder Include="RelatedEntities\DTOs\" />
-    <Folder Include="RelatedEntities\Interfaces\" />
   </ItemGroup>
 
   <PropertyGroup>
