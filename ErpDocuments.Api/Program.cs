@@ -8,6 +8,8 @@ using ErpDocuments.Infrastructure.Services.Companies;
 using ErpDocuments.Infrastructure.Services.RelatedEntities;
 using ErpDocuments.Application.Validation.Interfaces;
 using ErpDocuments.Infrastructure.Services.Validation;
+using Amazon.S3;
+using ErpDocuments.Infrastructure.Services.Storage;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,6 +34,10 @@ builder.Services.AddScoped<IRelatedEntityService, RelatedEntityService>();
 builder.Services.AddScoped<IValidationFlowService, ValidationFlowService>();
 builder.Services.AddScoped<IValidationStepService, ValidationStepService>();
 builder.Services.AddScoped<IValidationActionService, ValidationActionService>();
+builder.Services.AddScoped<IFileStorageService, S3FileStorageService>();
+// AWS & S3
+builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions("AWS"));
+builder.Services.AddAWSService<IAmazonS3>();
 
 var app = builder.Build();
 
