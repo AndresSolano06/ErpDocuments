@@ -20,4 +20,8 @@
     <ProjectReference Include="..\ErpDocuments.Infrastructure\ErpDocuments.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\uploads\" />
+  </ItemGroup>
+
 </Project>
